@@ -19,6 +19,7 @@ const sendMyInfo = async (req, res) => {
     const userId = req.id;
     // console.log("user id = ",userId)
     const myInfo = await userModels.findById(userId);
+    console.log(myInfo)
     if (!myInfo) {
       // console.log('User not found')
       return res.status(400).send("Cookies missing :(");

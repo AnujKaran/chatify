@@ -4,14 +4,22 @@ const http = require("http");
 require("./DB/MongoDB");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const cookieParser = require('cookie-parser')
 const app = express();
-
+const { Server } = require("socket.io");
 // middle wares
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+
+// app.use(cookieParser())
+app.use(cors({
+  origin: 'http://localhost:3000', // Replace with your client's origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  allowedHeaders: 'Content-Type, Authorization'
+}));
+app.use(express.json())
 app.use(bodyParser.json());
 const server = http.createServer(app);
 
-const { Server } = require("socket.io");
 const { signUpUser, loginUser } = require("./Controller/AuthController");
 const { sendAllUsers, sendMyInfo } = require("./Controller/UserController");
 const { LoginChecker } = require("./Validator/LoginChecker");
@@ -21,8 +29,11 @@ const userModels = require("./Models/UserModel");
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
-  },
+    origin: "http://localhost:3000", // Replace with your frontend origin
+    methods: ["GET", "POST"],
+    allowedHeaders: ['Content-Type'],
+    credentials: true,
+  }
 });
 
 const emailToSocketId = new Map();
@@ -82,9 +93,9 @@ server.listen(9000, () => {
 app.post("/signup", signUpUser);
 app.post("/login", loginUser);
 // Sending all users to the newly connected user
-app.get("/getAllUsers", sendAllUsers);
+app.post("/getAllUsers", sendAllUsers);
 
 app.use(LoginChecker); // Middleware for checking if a user is logged in or not
 app.use("/user", userRouter);
 
-app.get("/user/info", sendMyInfo);
+app.post("/user/info", sendMyInfo);

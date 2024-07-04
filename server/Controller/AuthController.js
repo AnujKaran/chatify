@@ -50,9 +50,9 @@ const loginUser = async (req, res) => {
 
     const token = jwt.sign({ payload: user["_id"] }, JWT_KEY);
     return res
-      .cookie("ConversifyLogin", token)
+      .cookie("ConversifyLogin", token,{path:"/",sameSite: 'None',})
       .status(200)
-      .send("Login Succesfully");
+      .send(user);
   } catch (error) {
    
     return res.status(502).send("Internal server error :(");
