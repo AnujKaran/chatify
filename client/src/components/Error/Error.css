@@ -1,0 +1,26 @@
+.container-Error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* background-color: green; */
+}
+.container-Error h1{
+  font-size: 2.7em;
+
+}
+.container-Error p{
+  display: block;
+  font-size: 1em;
+}
+
+@media (max-width:600px){
+  .container-Error h1{
+    font-size: 2rem;
+  }
+  .container-Error p{
+    
+    font-size: .9em;
+  }
+}

@@ -1,0 +1,102 @@
+.auth-container h1{
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 20px 10px;
+    font-weight: 500;
+    
+    
+}
+
+.Auth-container-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 12px;
+    border: 1px solid rgba(245, 245, 245, 0.853);
+    padding: 2rem 3rem;
+    border-radius: var(--primary-border-radius);
+    filter: blur();
+    
+    height: fit-content;
+    margin-top: 30px;
+    background-color: white;
+}
+
+.Auth-container-form label:nth-child(1){
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+.Auth-container-form span{
+    font-size: .9rem;
+
+}
+.Auth-container-form span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.Auth-container-form input{
+    padding: 13px 15px;
+    background-color: transparent;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 300px;
+    font-size: .9rem;
+    border: 1px solid transparent ;
+    
+    outline: 0;
+    border-radius: 10px;
+}
+
+.Auth-container-form input:focus {
+    border: 1px solid rgba(6, 7, 45, 0.336);
+    /* background-color: var(--primary-color);
+   ; */
+}
+
+.Auth-container-form input::placeholder{
+color: rgb(95, 93, 93);
+
+}
+
+.Auth-container-form button{
+    font-size: 15px;
+    width: 100%;
+    padding: 12px;
+    margin-top: 2.2rem;
+    background-color: transparent;
+    /* border: 1px solid rgba(245, 245, 245, 0.853); */
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .2s;
+    color: whitesmoke;
+    background-color: rgb(31, 120, 193);
+    /* background-color: rgba(0, 95, 197, 0.424); */
+    
+}
+
+.Auth-container-form button:hover{
+    background-color: #0056b3;
+    
+    /* color: black; */
+    /* border: 1px solid transparent; */
+    
+}
+
+.form-group{
+    /* background-color: red; */
+    position: relative;
+}
+.form-group input{
+    padding-right: 30px;
+}
+.form-group i{
+    position: absolute;
+    right: 7px;
+    /* left: 0; */
+    top:13px;
+    cursor: pointer;
+    
+    /* margin: auto auto; */
+}

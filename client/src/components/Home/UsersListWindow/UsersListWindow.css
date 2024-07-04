@@ -1,0 +1,150 @@
+.UserListWindow-container {
+  background-color: white;
+  width: 400px;
+  height: 100%;
+  border-radius: 13px;
+  padding: 15px 10px;
+  overflow: scroll;
+}
+
+.UserListWindow-container h1{
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(121, 121, 121);
+  
+  margin-bottom: 10px;
+}
+.logout{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.logout button{
+  background-color: white;
+  width: 100%;
+  padding: .6rem 1.1rem;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  
+}
+
+.logout button:hover{
+  
+  color: #ffffff;
+  cursor: pointer;
+  background-color: rgb(220, 80, 80);
+  border: 1px solid transparent;
+}
+.UserList-option{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 10px;
+  margin: 1.2rem 0
+
+}
+
+.UserList-option div{
+  width: 100%;
+  padding: 9px;
+  border-radius: 5rem;
+  font-size: .83rem;
+  border: 1px solid rgba(0, 0, 0, 0.318);
+}
+.UserList-option div:hover{
+  background-color: var(--primary-color);
+  color: #dfdfdf;
+  cursor: pointer;
+  background-color: steelblue;
+  border: 1px solid transparent;
+}
+.UserList-option-selected{
+  color: #dfdfdf;
+  background-color: var(--primary-color);
+  background-color: steelblue;
+  border: 1px solid transparent !important;
+
+}
+.UserListWindow-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  row-gap: 5px;
+}
+.UserListWindow-ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.15s;
+  padding: 5px 15px 5px 5px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-align: start;
+}
+
+.UserListWindow-ul li:hover {
+  /* color: whitesmoke; */
+  background-color: var(--primary-color);
+  background-color: rgba(6, 6, 104, 0.206);
+  /* background-color: rgba(128, 0, 128, 0.118); */
+  /* background-color: purple; */
+  background-color: steelblue;
+}
+
+.UserListWindow-ul li:hover p{
+  color: white;
+}
+
+.UserListWindow-ul li > div {
+  display: flex;
+  column-gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.UserListWindow-ul li i:hover{
+    
+    transition: .2s;
+}
+.UserListWindow-ul li button{
+  padding: 7px 12px;
+  font-size: .8rem;
+  border-radius: 100px;
+  border: 0;
+  color: rgb(0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
+  
+  background-color: #ebebeb;
+  color: green;
+}
+.UserListWindow-ul li button:nth-child(2){
+  color: red;
+}
+.UserListWindow-ul img {
+  width: 40px;
+  border-radius: 50%;
+}
+.UserListWindow-ul span {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.UserListWindow-ul p {
+  color: green;
+}
+
+@media  (max-width:1200px) {
+ .UserListWindow-container{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  border-radius: 0;
+  z-index: 1;
+ }   
+}
